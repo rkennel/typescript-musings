@@ -1,0 +1,76 @@
+{
+  "name": "typescript-musings",
+  "jest": {
+    "testMatch": [
+      "**/test/jest/**/*.spec.[jt]s?(x)"
+    ],
+    "verbose": true,
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/src/jest/",
+      "/src/e2e"
+    ]
+  },
+  "version": "0.1",
+  "description": "Experiments to help me better understand typescript",
+  "main": "build/index.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "test": "test"
+  },
+  "files": [
+    "./build/*"
+  ],
+  "scripts": {
+    "prebuild": "yarn test:all",
+    "build": "tsc",
+    "lint": "eslint ./src/**/*.ts --fix",
+    "pretest": "yarn lint",
+    "test": "jest 'src/test/jest/.*.spec.ts$'",
+    "test:watch": "jest 'src/test/jest/.*.spec.ts$' --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.ford.com:ford-credit-inner-source/pdo-metrics.git"
+  },
+  "keywords": [
+    "rally",
+    "api",
+    "pdo",
+    "metrics",
+    "client"
+  ],
+  "author": "Ryan Kennel (rkennel@ford.com)",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^4.3.5 "
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.1",
+    "@types/jsdom": "^16.2.13",
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
+    "@typescript-eslint/parser": "^4.29.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "jest": "^27.0.1",
+    "jsdom": "^17.0.0",
+    "prettier": "^2.0.5",
+    "ts-jest": "^27.0.1"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": true,
+    "singleQuote": false
+  }
+}
